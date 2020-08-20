@@ -16,12 +16,20 @@
   <strong>Category:</strong>
   <%= @restaurant.category %>
 </h5>
-<h6><strong>Reviews:</strong></h6>
-<% @restaurant.reviews.each do |review| %>
-  <p><%= review.rating %></p>
-  <p><%= review.content %></p>
+<br>
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+  <li class="list-group-item">
+    <div class="text-center">
+      <strong>Rating: </strong><%= review.rating %>
+      <hr>
+      <strong>Content: </strong><%= review.content %>
+    </div>
+  </li>
   <hr>
 <% end %>
+</ul>
+
 
 <%= link_to 'Back', restaurants_path %> |
 <%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %>

@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews, only: [:new, :create]
   end
+  resources :restaurants do
+    member do
+      post 'reviews'
+    end
+  end
 end
