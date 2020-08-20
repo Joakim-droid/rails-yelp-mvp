@@ -1,21 +1,25 @@
-<p>
+<h2>
   <strong>Name:</strong>
   <%= @restaurant.name %>
-</p>
+</h2>
 
-<p>
+<h3>
   <strong>Address:</strong>
   <%= @restaurant.address %>
-</p>
+</h3>
 
-<p>
+<h4>
   <strong>Phone Number:</strong>
   <%= @restaurant.phone_number %>
-</p>
-
+</h4>
+<h5>
+  <strong>Category:</strong>
+  <%= @restaurant.category %>
+</h5>
+<h6><strong>Reviews:</strong></h6>
 <% @restaurant.reviews.each do |review| %>
+  <p><%= review.rating %></p>
   <p><%= review.content %></p>
-  <%= link_to 'delete', review_path(review), method: :delete %>
   <hr>
 <% end %>
 
